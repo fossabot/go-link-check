@@ -1,0 +1,12 @@
+#-------------------------------------------------------------------------------
+#
+# Prettier Ignores, https://prettier.io/docs/en/ignore.html
+#
+#-------------------------------------------------------------------------------
+
+# NPM Modules
+/node_modules/
+/package-lock.json
+
+# Go Modules
+/vendor/

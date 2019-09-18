@@ -1,0 +1,17 @@
+#-------------------------------------------------------------------------------
+#
+# Git Ignore Config, https://git-scm.com/docs/gitignore.
+#
+#-------------------------------------------------------------------------------
+
+# Keep this file even if directory has been ignored.
+!.keep
+
+# Yarn Dependencies
+/node_modules/
+
+# Go Dependencies
+/vendor/
+
+# Build
+/go-link-check
