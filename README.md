@@ -19,9 +19,6 @@ or with [Docker](https://www.docker.com/)
 
 ```bash
 docker run -it --rm $(docker build --quiet .)
-
-# (optional) After running, to clean up project built images.
-docker rmi -f $(docker images --filter "label=go-link-check=true" -q)
 ```
 
 ## Want to lean more?
