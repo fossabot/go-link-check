@@ -1,6 +1,6 @@
-# [Respite Core](https://github.com/dbtedman/go-link-check)
+# [Go Link Check](https://github.com/dbtedman/go-link-check)
 
-Providing respite by matching desired capacity to available talent.
+Link check automation tool.
 
 [![Actions Status](https://github.com/dbtedman/go-link-check/workflows/test/badge.svg)](https://github.com/dbtedman/go-link-check/actions)
 [![Known Vulnerabilities](https://snyk.io/test/github/dbtedman/go-link-check/badge.svg)](https://snyk.io/test/github/dbtedman/go-link-check)
