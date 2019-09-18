@@ -24,5 +24,8 @@ jobs:
       - name: "Get dependencies"
         run: "go mod vendor"
 
+      - name: "Test"
+        run: "go test ./... -cover"
+
       - name: "Build"
         run: "go build -v -mod=vendor -o ./go-link-check"
