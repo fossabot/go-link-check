@@ -4,13 +4,24 @@ Link check automation tool.
 
 [![Actions Status](https://github.com/dbtedman/go-link-check/workflows/test/badge.svg)](https://github.com/dbtedman/go-link-check/actions)
 [![Known Vulnerabilities](https://snyk.io/test/github/dbtedman/go-link-check/badge.svg)](https://snyk.io/test/github/dbtedman/go-link-check)
+![Go Version](https://img.shields.io/static/v1?label=Go&message=v1.13&color=blue&style=flat)
 
 ## Getting Started
 
 ```bash
 go mod vendor \
+    && go test ./... -cover \
     && go build -v -mod=vendor -o ./go-link-check \
     && ./go-link-check
+```
+
+or with [Docker](https://www.docker.com/)
+
+```bash
+docker run -it --rm $(docker build --quiet .)
+
+# (optional) After running, to clean up project built images.
+docker rmi -f $(docker images --filter "label=go-link-check=true" -q)
 ```
 
 ## Want to lean more?

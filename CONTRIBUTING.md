@@ -16,6 +16,12 @@
 
 Linting and Testing is performed before each commit by [Husky](https://github.com/typicode/husky), see `.husky.js` for configuration.
 
+## Audit
+
+```bash
+npm run audit
+```
+
 ## Format
 
 Auto-formatting is being used to help develop consistently formatted source code.
