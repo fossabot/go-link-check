@@ -4,11 +4,14 @@
 #
 #-------------------------------------------------------------------------------
 
-# Yarn Dependencies
+# Yarn dependencies
 /node_modules/
 
-# Go Dependencies
+# Go dependencies
 /vendor/
 
 # Build
 /go-link-check
+
+# CI configuration
+/.github/

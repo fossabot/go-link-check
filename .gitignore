@@ -12,3 +12,6 @@
 
 # Build
 /go-link-check
+
+# Keep these directories, even if ignored otherwise
+!.keep
