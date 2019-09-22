@@ -10,7 +10,7 @@ Link check automation tool.
 
 ```bash
 go mod vendor \
-    go test ./lib/... -cover || true \
+    && go test ./lib/... -cover || true \
     && go build -v -mod=vendor -o ./go-link-check \
     && ./go-link-check
 ```
