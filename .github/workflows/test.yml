@@ -8,13 +8,6 @@ name: "test"
 on:
   - "push"
 jobs:
-  docker:
-    name: "Docker"
-    runs-on: "ubuntu-latest"
-    steps:
-      - name: "Build the Docker image"
-        uses: "actions/checkout@v1"
-        run: 'printenv && docker build --build-arg BUILD_DATE="" --build-arg VCS_REF="" --build-arg VERSION="" .'
   build:
     name: "Build"
     runs-on: "ubuntu-latest"
@@ -36,3 +29,6 @@ jobs:
 
       - name: "Build"
         run: "go build -v -mod=vendor -o ./go-link-check"
+
+      - name: "Build the Docker image"
+        run: 'printenv && docker build --build-arg BUILD_DATE="" --build-arg VCS_REF="" --build-arg VERSION="" .'
