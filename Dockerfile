@@ -18,7 +18,6 @@ WORKDIR /app
 
 # Install module dependencies, run test suite, and build executable.
 RUN go mod vendor \
-  && go test ./lib/... -cover || true \
   && go build -v -mod=vendor -o ./go-link-check
 
 FROM alpine:3.10.2
