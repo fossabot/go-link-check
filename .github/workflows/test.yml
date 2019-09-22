@@ -30,6 +30,6 @@ jobs:
       - name: "Build"
         run: "go build -v -mod=vendor -o ./go-link-check"
 
-      - uses: "actions/checkout@v1"
       - name: "Build the Docker image"
+        uses: "actions/checkout@v1"
         run: "printenv && docker build --build-arg BUILD_DATE="" --build-arg VCS_REF="" --build-arg VERSION="" ."
