@@ -2,7 +2,7 @@
 
 -   [Resources](#resources)
 -   [Pre-Commit Hooks](#pre-commit-hooks)
--   [Format](#format)
+-   [Formatting and Linting](#formatting-and-linting)
 -   [Testing](#testing)
 -   [Dependencies](#dependencies)
 
@@ -22,7 +22,7 @@ Linting and Testing is performed before each commit by [Husky](https://github.co
 npm run audit
 ```
 
-## Format
+## Formatting and Linting
 
 Auto-formatting is being used to help develop consistently formatted source code.
 
@@ -36,6 +36,12 @@ gofmt -w .
 
 ```bash
 npm install && npm run format
+```
+
+[Hadolint](https://github.com/hadolint/hadolint) for `Dockerfile`
+
+```bash
+docker run --rm -i hadolint/hadolint < Dockerfile
 ```
 
 ## Testing
