@@ -4,11 +4,10 @@
   "license": "MIT",
   "scripts": {
     "_prettier": "prettier './**/*.{js,md,yml,json}'",
-    "audit": "npm run audit:npm && npm run audit:docker",
-    "audit:npm": "snyk test --dev --file=package.json  --policy-path=.snyk",
+    "audit:yarn": "snyk test --dev --file=package.json  --policy-path=.snyk",
     "audit:docker": "snyk test --docker $(docker build --quiet .) --dev --file=Dockerfile --policy-path=.snyk",
-    "format": "npm run _prettier -- --write",
-    "lint": "npm run _prettier -- --check",
+    "format": "yarn _prettier -- --write",
+    "lint": "yarn _prettier -- --check",
     "snyk:auth": "snyk auth"
   },
   "devDependencies": {

@@ -1,4 +1,4 @@
-# [Kotlin Link Check](./README.md) / Contributing
+# [Go Link Check](./README.md) / Contributing
 
 -   [Resources](#resources)
 -   [Pre-Commit Hooks](#pre-commit-hooks)
@@ -16,12 +16,6 @@
 
 Linting and Testing is performed before each commit by [Husky](https://github.com/typicode/husky), see `.husky.js` for configuration.
 
-## Audit
-
-```bash
-npm run audit
-```
-
 ## Formatting and Linting
 
 Auto-formatting is being used to help develop consistently formatted source code.
@@ -32,13 +26,19 @@ Auto-formatting is being used to help develop consistently formatted source code
 gofmt -w .
 ```
 
+> TODO: Add linting to CI.
+
 [Prettier](https://github.com/prettier/prettier) for `.js`, `.md`, `.yml`, and `.json` files.
 
 ```bash
-npm install && npm run format
+yarn install && yarn run format
 ```
 
+> TODO: Add linting to CI.
+
 [Hadolint](https://github.com/hadolint/hadolint) for `Dockerfile`
+
+> TODO: Add to CI.
 
 ```bash
 docker run --rm -i hadolint/hadolint < Dockerfile

@@ -63,6 +63,7 @@ func CheckLinkStatus(url string) LinkStatus {
 	}
 
 	// TODO: Should we check anything else to determine if it was successful?
+	// TODO: Perhaps the body returned from the request is actually HTML and not empty?
 	status.Success = true
 	status.Redirects = url != resp.Request.URL.String()
 	status.Code = resp.StatusCode

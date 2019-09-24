@@ -15,7 +15,7 @@ jobs:
       - name: "Check out code"
         uses: "actions/checkout@v1"
 
-      # TODO: Need to run npm linting too.
+      # TODO: Need to run yarn linting too.
 
       - name: "Set up Go 1.13"
         uses: "actions/setup-go@v1"

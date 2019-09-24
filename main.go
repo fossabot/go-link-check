@@ -8,6 +8,7 @@ import (
 	"strconv"
 )
 
+// TODO: Move all but absolute minimum from this main function into separate functions for testability.
 func main() {
 	// TODO: Initial work on simple one page check mode.
 
