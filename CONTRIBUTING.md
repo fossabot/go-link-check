@@ -1,4 +1,4 @@
-# [Respite Core](./README.md) / Contributing
+# [Kotlin Link Check](./README.md) / Contributing
 
 -   [Resources](#resources)
 -   [Pre-Commit Hooks](#pre-commit-hooks)

@@ -4,14 +4,15 @@
 #
 #-------------------------------------------------------------------------------
 
-# Yarn Dependencies
+# Yarn dependencies
 /node_modules/
 
-# Go Dependencies
+# Go dependencies
 /vendor/
 
-# Build
+# Build and run
 /go-link-check
+/results.csv
 
 # Keep these directories, even if ignored otherwise
 !.keep

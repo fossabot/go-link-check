@@ -1,4 +1,4 @@
-package http
+package lib
 
 import (
 	"fmt"
@@ -8,10 +8,10 @@ import (
 )
 
 type LinkStatus struct {
-	url       string
-	success   bool
-	redirects bool
-	code      int
+	Url       string
+	Success   bool
+	Redirects bool
+	Code      int
 }
 
 func CheckAllLinkStatus(urls []string) []LinkStatus {
@@ -20,7 +20,7 @@ func CheckAllLinkStatus(urls []string) []LinkStatus {
 	// Define a channel for communicating from go routine back to calling function.
 	linkStatuses := make(chan *LinkStatus)
 
-	// Determine how may go routines to wait for.
+	// Determine how many go routines to wait for.
 	wg.Add(len(urls))
 
 	for _, url := range urls {
@@ -36,7 +36,7 @@ func CheckAllLinkStatus(urls []string) []LinkStatus {
 	go func() {
 		// This runs after each go routine has finished, how does this work?
 		for linkStatus := range linkStatuses {
-			fmt.Println("checking: " + linkStatus.url)
+			fmt.Println("checking: " + linkStatus.Url)
 			linkStatusList = append(linkStatusList, *linkStatus)
 		}
 	}()
@@ -63,9 +63,9 @@ func CheckLinkStatus(url string) LinkStatus {
 	}
 
 	// TODO: Should we check anything else to determine if it was successful?
-	status.success = true
-	status.redirects = url != resp.Request.URL.String()
-	status.code = resp.StatusCode
+	status.Success = true
+	status.Redirects = url != resp.Request.URL.String()
+	status.Code = resp.StatusCode
 
 	return status
 }
