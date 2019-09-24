@@ -9,10 +9,7 @@ Link check automation tool.
 ## Getting Started
 
 ```bash
-go mod vendor \
-    && go test ./lib/... -cover || true \
-    && go build -v -mod=vendor -o ./go-link-check \
-    && ./go-link-check
+make
 ```
 
 or with [Docker](https://www.docker.com/)
