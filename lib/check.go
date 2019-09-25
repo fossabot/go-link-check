@@ -1,7 +1,7 @@
 package lib
 
 import (
-	"fmt"
+	log "github.com/sirupsen/logrus"
 	"net/http"
 	"sync"
 	"time"
@@ -36,7 +36,7 @@ func CheckAllLinkStatus(urls []string) []LinkStatus {
 	go func() {
 		// This runs after each go routine has finished, how does this work?
 		for linkStatus := range linkStatuses {
-			fmt.Println("checking: " + linkStatus.Url)
+			log.WithFields(ContextFields()).Debugf("checking: %s", linkStatus.Url)
 			linkStatusList = append(linkStatusList, *linkStatus)
 		}
 	}()
@@ -62,8 +62,6 @@ func CheckLinkStatus(url string) LinkStatus {
 		}()
 	}
 
-	// TODO: Should we check anything else to determine if it was successful?
-	// TODO: Perhaps the body returned from the request is actually HTML and not empty?
 	status.Success = true
 	status.Redirects = url != resp.Request.URL.String()
 	status.Code = resp.StatusCode

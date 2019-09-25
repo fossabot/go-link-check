@@ -8,14 +8,44 @@ Link check automation tool.
 
 ## Getting Started
 
+### Install
+
+Install Go module dependencies.
+
 ```bash
-make
+go mod vendor
 ```
 
-or with [Docker](https://www.docker.com/)
+### Build
+
+Build executable from Go source code.
 
 ```bash
-docker run -it --rm $(docker build --quiet .)
+go build -v -mod=vendor -o ./go-link-check
+```
+
+### Run
+
+Run `go-link-check` to generate link check report.
+
+```bash
+./go-link-check -url="https://danieltedman.com"
+```
+
+### Help
+
+To learn more about the available configuration options, view the help.
+
+```bash
+./go-link-check -help
+```
+
+### Docker
+
+Alternatively [Docker](https://www.docker.com/) can be used to build and run the application.
+
+```bash
+docker run -it --rm $(docker build --quiet .) -url="https://danieltedman.com"
 ```
 
 ## Want to lean more?
