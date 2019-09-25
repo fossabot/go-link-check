@@ -40,6 +40,16 @@ To learn more about the available configuration options, view the help.
 ./go-link-check -help
 ```
 
+You will see something like the following.
+
+```
+Usage of ./go-link-check:
+  -outFile string
+        (optional) Path to output report csv to. (default "results.csv")
+  -url string
+        Website URL to parse for links to validate.
+```
+
 ### Docker
 
 Alternatively [Docker](https://www.docker.com/) can be used to build and run the application.

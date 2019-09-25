@@ -12,7 +12,7 @@ func main() {
 	log.SetLevel(log.DebugLevel)
 
 	url := flag.String("url", "", "Website URL to parse for links to validate.")
-	outFile := flag.String("outFile", "results.csv", "Path to output report csv to.")
+	outFile := flag.String("outFile", "results.csv", "(optional) Path to output report csv to.")
 
 	flag.Parse()
 
