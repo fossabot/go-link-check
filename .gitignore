@@ -14,5 +14,8 @@
 /go-link-check
 /results.csv
 
+# Testing
+/coverage.txt
+
 # Keep these directories, even if ignored otherwise
 !.keep
