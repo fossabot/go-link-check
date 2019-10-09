@@ -3,6 +3,7 @@ package lib
 import (
 	"encoding/csv"
 	log "github.com/sirupsen/logrus"
+	"io"
 	"os"
 	"strconv"
 )
@@ -16,9 +17,15 @@ func WriteResultsToFile(filePath string, linkStatusList []LinkStatus) {
 		}()
 	}
 
-	writer := csv.NewWriter(file)
+	WriteResultsToWriter(file, linkStatusList)
 
-	if file != nil {
+	log.WithFields(ContextFields()).Infof("Results written to file \"%s\"", filePath)
+}
+
+func WriteResultsToWriter(out io.Writer, linkStatusList []LinkStatus) {
+	writer := csv.NewWriter(out)
+
+	if writer != nil {
 		defer func() {
 			writer.Flush()
 		}()
@@ -39,6 +46,4 @@ func WriteResultsToFile(filePath string, linkStatusList []LinkStatus) {
 			strconv.FormatUint(uint64(value.Code), 10),
 		})
 	}
-
-	log.WithFields(ContextFields()).Infof("Results written to file \"%s\"", filePath)
 }
