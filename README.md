@@ -3,6 +3,7 @@
 Link check automation tool.
 
 [![Actions Status](https://github.com/dbtedman/go-link-check/workflows/test/badge.svg)](https://github.com/dbtedman/go-link-check/actions)
+[![codecov](https://codecov.io/gh/dbtedman/go-link-chec/branch/master/graph/badge.svg)](https://codecov.io/gh/dbtedman/go-link-chec)
 [![Known Vulnerabilities](https://snyk.io/test/github/dbtedman/go-link-check/badge.svg)](https://snyk.io/test/github/dbtedman/go-link-check)
 ![Go Version](https://img.shields.io/static/v1?label=Go&message=v1.13&color=blue&style=flat)
 

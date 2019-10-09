@@ -34,6 +34,8 @@ jobs:
 
       - name: "Publish Coverage"
         run: "bash <(curl -s https://codecov.io/bash)"
+        env:
+          CODECOV_TOKEN: ${{ secrets. CODECOV_TOKEN }}
 
       - name: "Build the Docker image"
         run: |
