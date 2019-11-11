@@ -1,4 +1,4 @@
-package lib
+package core
 
 import (
 	"github.com/PuerkitoBio/goquery"
@@ -6,12 +6,12 @@ import (
 	"net/http"
 )
 
-func FetchLinksFromPage(url string) []string {
+func FetchLinksFromPage(url string, client *http.Client) []string {
 	var links []string
 
 	log.Printf("Finding links to validate on %s", url)
 
-	resp, err := http.Get(url)
+	resp, err := client.Get(url)
 
 	if err != nil {
 		return links

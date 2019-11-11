@@ -1,4 +1,4 @@
-package lib
+package core
 
 import (
 	"gotest.tools/assert"
