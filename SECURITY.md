@@ -11,7 +11,7 @@
 Dependency scanning provided by [Snyk](https://snyk.io/test/github/dbtedman/go-link-check) for NPM and Docker dependencies.
 
 ```bash
-yarn audit:npm && yarn audit:docker
+yarn audit:yarn && yarn audit:docker
 ```
 
 ## Security Disclosure Policy
