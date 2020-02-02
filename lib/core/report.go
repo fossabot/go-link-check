@@ -2,7 +2,7 @@ package core
 
 import (
 	"encoding/csv"
-	log "github.com/sirupsen/logrus"
+	"github.com/dbtedman/go-link-check/lib/services"
 	"io"
 	"os"
 	"strconv"
@@ -19,7 +19,7 @@ func WriteResultsToFile(filePath string, linkStatusList []LinkStatus) {
 
 	WriteResultsToWriter(file, linkStatusList)
 
-	log.WithFields(ContextFields()).Infof("Results written to file \"%s\"", filePath)
+	services.InfoFormat("Results written to file \"%s\"", filePath)
 }
 
 func WriteResultsToWriter(out io.Writer, linkStatusList []LinkStatus) {

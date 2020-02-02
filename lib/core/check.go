@@ -1,7 +1,7 @@
 package core
 
 import (
-	log "github.com/sirupsen/logrus"
+	"github.com/dbtedman/go-link-check/lib/services"
 	"net/http"
 	"sync"
 	"time"
@@ -36,7 +36,7 @@ func CheckAllLinkStatus(urls []string) []LinkStatus {
 	go func() {
 		// This runs after each go routine has finished, how does this work?
 		for linkStatus := range linkStatuses {
-			log.WithFields(ContextFields()).Debugf("checking: %s", linkStatus.Url)
+			services.DebugFormat("checking: %s", linkStatus.Url)
 			linkStatusList = append(linkStatusList, *linkStatus)
 		}
 	}()

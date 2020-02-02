@@ -10,7 +10,7 @@
 
 -   [Effective Go](https://golang.org/doc/effective_go.html)
 -   [Go by Example](https://gobyexample.com/)
--   [Just tell me how to use Go Modules](https://www.kablamo.com.au/blog/2018/12/10/just-tell-me-how-to-use-go-modules)
+-   [Just tell me how to use Go Modules](https://engineering.kablamo.com.au/posts/2018/just-tell-me-how-to-use-go-modules)
 
 ## Pre-Commit Hooks
 

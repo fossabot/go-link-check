@@ -3,22 +3,20 @@ package cli
 import (
 	"flag"
 	"github.com/dbtedman/go-link-check/lib/core"
-	"github.com/sirupsen/logrus"
-	"net/http"
+	"github.com/dbtedman/go-link-check/lib/services"
 	"regexp"
 )
 
 func Run() {
-	logrus.SetFormatter(&logrus.JSONFormatter{})
-	logrus.SetLevel(logrus.DebugLevel)
+	services.ConfigureLogging()
 
-	url := flag.String("url", "", "Website URL to parse for links to validate.")
-	outFile := flag.String("outFile", "results.csv", "(optional) Path to output report csv to.")
+	url := flag.String("url", "", core.CliOptionUrl)
+	outFile := flag.String("outFile", "results.csv", core.CliOptionOutFile)
 
 	flag.Parse()
 
 	if *url == "" {
-		logrus.Errorln("-url must be provided")
+		services.ErrorLine(core.CliErrorMissingOptionUrl)
 		return
 	}
 
@@ -26,13 +24,13 @@ func Run() {
 	match, _ := regexp.MatchString(pattern, *outFile)
 
 	if !match {
-		logrus.Errorf("-outFile `%s` must be a file path matching pattern `%s`", *outFile, pattern)
+		services.ErrorFormat(core.CliErrorInvalidOutFile, *outFile, pattern)
 		return
 	}
 
-	urls := core.FetchLinksFromPage(*url, http.DefaultClient)
+	config := core.ApplicationConfiguration{}
+	config.BaseURL = url
+	config.OutputFilePath = outFile
 
-	linkStatusList := core.CheckAllLinkStatus(urls)
-
-	core.WriteResultsToFile(*outFile, linkStatusList)
+	core.Application(&config)
 }
