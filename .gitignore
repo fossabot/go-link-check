@@ -11,7 +11,7 @@
 /vendor/
 
 # Build and run
-/go-link-check
+/glc
 /results.csv
 
 # Testing

@@ -6,6 +6,6 @@
 
 module.exports = {
   hooks: {
-    "pre-commit": "yarn lint && gofmt -l . && go test ./..."
-  }
+    "pre-commit": "yarn lint && gofmt -l . && go test ./...",
+  },
 };

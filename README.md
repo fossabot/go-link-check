@@ -1,4 +1,4 @@
-# [Go Link Check](https://github.com/dbtedman/go-link-check)
+# [Go Link Check `glc`](https://github.com/dbtedman/go-link-check)
 
 Link check automation tool.
 
@@ -22,15 +22,15 @@ go mod vendor
 Build executable from Go source code.
 
 ```bash
-go build -v -mod=vendor -o ./go-link-check
+go build -v -mod=vendor -o ./glc
 ```
 
 ### Run
 
-Run `go-link-check` to generate link check report.
+Run `glc` to generate link check report.
 
 ```bash
-./go-link-check -url="https://danieltedman.com"
+./glc -url="https://danieltedman.com"
 ```
 
 ### Help
@@ -38,13 +38,13 @@ Run `go-link-check` to generate link check report.
 To learn more about the available configuration options, view the help.
 
 ```bash
-./go-link-check -help
+./glc -help
 ```
 
 You will see something like the following.
 
 ```
-Usage of ./go-link-check:
+Usage of ./glc:
   -outFile string
         (optional) Path to output report csv to. (default "results.csv")
   -url string
@@ -56,7 +56,7 @@ Usage of ./go-link-check:
 Alternatively [Docker](https://www.docker.com/) can be used to build and run the application.
 
 ```bash
-docker run -it --rm $(docker build --quiet .) -url="https://danieltedman.com"
+docker build --tag glc:latest . && docker run -it --rm glc:latest -url="https://danieltedman.com"
 ```
 
 ## Want to lean more?

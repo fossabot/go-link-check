@@ -4,16 +4,15 @@
   "license": "MIT",
   "scripts": {
     "_prettier": "prettier './**/*.{js,md,yml,json}'",
-    "audit:docker": "snyk test --docker $(docker build --quiet .) --dev --file=Dockerfile --policy-path=.snyk",
-    "audit:yarn": "snyk test --dev --file=package.json  --policy-path=.snyk",
+    "audit:docker": "docker build --tag glc:latest . && yarn snyk test --docker glc:latest --dev --file=Dockerfile --policy-path=.snyk",
+    "audit:yarn": "yarn snyk test --dev --file=package.json  --policy-path=.snyk",
     "format": "yarn _prettier -- --write",
     "lint": "yarn _prettier -- --check",
-    "snyk": "snyk",
     "test": "yarn audit:yarn && yarn audit:docker"
   },
   "devDependencies": {
-    "husky": "4.2.1",
-    "prettier": "1.19.1",
-    "snyk": "1.290.1"
+    "husky": "4.2.*",
+    "prettier": "2.0.*",
+    "snyk": "1.305.*"
   }
 }
