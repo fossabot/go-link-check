@@ -7,33 +7,31 @@ Link check automation tool.
 [![Known Vulnerabilities](https://snyk.io/test/github/dbtedman/go-link-check/badge.svg)](https://snyk.io/test/github/dbtedman/go-link-check)
 ![Go Version](https://img.shields.io/static/v1?label=Go&message=v1.13&color=blue&style=flat)
 
-## Getting Started
+-   [Where to start?](#where-to-start)
+-   [What options does it have?](#help)
+-   [Can I use Docker?](#can-i-use-docker)
+-   [Want to lean more?](#want-to-lean-more)
 
-### Install
+## Where to start?
 
-Install Go module dependencies.
-
-```bash
-go mod vendor
-```
-
-### Build
-
-Build executable from Go source code.
+Install necessary dependencies, build and run program:
 
 ```bash
-go build -v -mod=vendor -o ./glc
+go mod vendor && go build -mod=vendor -o ./glc && ./glc -url="https://danieltedman.com"
 ```
 
-### Run
+You will see output something like the following:
 
-Run `glc` to generate link check report.
-
-```bash
-./glc -url="https://danieltedman.com"
+```text
+{"level":"debug","msg":"checking: https://github.com/dbtedman","time":"2020-04-20T19:22:52+10:00"}
+{"level":"debug","msg":"checking: https://danieltedman.com/cart","time":"2020-04-20T19:22:52+10:00"}
+{"level":"debug","msg":"checking: https://www.linkedin.com/in/dbtedman","time":"2020-04-20T19:22:52+10:00"}
+{"level":"debug","msg":"checking: https://danieltedman.com/","time":"2020-04-20T19:22:53+10:00"}
+{"level":"debug","msg":"checking: https://danieltedman.com/my-work","time":"2020-04-20T19:22:54+10:00"}
+{"level":"info","msg":"Results written to file \"results.csv\"","time":"2020-04-20T19:22:55+10:00"}
 ```
 
-### Help
+## What options does it have?
 
 To learn more about the available configuration options, view the help.
 
@@ -43,7 +41,7 @@ To learn more about the available configuration options, view the help.
 
 You will see something like the following.
 
-```
+```text
 Usage of ./glc:
   -outFile string
         (optional) Path to output report csv to. (default "results.csv")
@@ -51,9 +49,9 @@ Usage of ./glc:
         Website URL to parse for links to validate.
 ```
 
-### Docker
+## Can I use Docker?
 
-Alternatively [Docker](https://www.docker.com/) can be used to build and run the application.
+Yes, [Docker](https://www.docker.com/) can be used to build and run the application.
 
 ```bash
 docker build --tag glc:latest . && docker run -it --rm glc:latest -url="https://danieltedman.com"
