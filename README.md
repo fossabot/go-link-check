@@ -6,6 +6,7 @@ Link check automation tool.
 [![codecov](https://codecov.io/gh/dbtedman/go-link-check/branch/master/graph/badge.svg)](https://codecov.io/gh/dbtedman/go-link-check)
 [![Known Vulnerabilities](https://snyk.io/test/github/dbtedman/go-link-check/badge.svg)](https://snyk.io/test/github/dbtedman/go-link-check)
 ![Go Version](https://img.shields.io/static/v1?label=Go&message=v1.13&color=blue&style=flat)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fdbtedman%2Fgo-link-check.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fdbtedman%2Fgo-link-check?ref=badge_shield)
 
 -   [Where to start?](#where-to-start)
 -   [What options does it have?](#help)
@@ -63,3 +64,7 @@ docker build --tag glc:latest . && docker run -it --rm glc:latest -url="https://
 -   See our [Changelog](CHANGELOG.md) for details on which features, improvements, and bug fixes have been implemented
 -   See our [License](LICENSE.md) for details on how you can use the code in this repository.
 -   See our [Security Guide](SECURITY.md) for details on how security is considered.
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fdbtedman%2Fgo-link-check.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fdbtedman%2Fgo-link-check?ref=badge_large)
